@@ -1,0 +1,10 @@
+# 生成的日历文件（每个人的课表不一样，不要提交）
+*.ics
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# macOS
+.DS_Store
