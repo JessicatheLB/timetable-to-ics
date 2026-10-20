@@ -22,6 +22,10 @@ let request = VNRecognizeTextRequest()
 request.recognitionLevel = .accurate
 request.recognitionLanguages = ["zh-Hans", "en-US"]
 request.usesLanguageCorrection = true
+// 第 2 个参数之后全部当成「自定义词表」，用来提示课名 / 教室 / 院系这类专有词，能提高命中率
+if CommandLine.arguments.count > 2 {
+    request.customWords = Array(CommandLine.arguments.dropFirst(2))
+}
 
 let handler = VNImageRequestHandler(cgImage: cg, options: [:])
 do {
